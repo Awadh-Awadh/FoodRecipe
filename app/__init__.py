@@ -1,10 +1,11 @@
 from flask import Flask
 from config import config_options
+from flask_bootstrap import Bootstrap
 
 
  #extensions instance creation
 
-
+bootstrap = Bootstrap()
 
 
 def create_app(config_name):
@@ -20,4 +21,5 @@ def create_app(config_name):
     app.register_blueprint(auth_blueprint)
 
     #extensions instance initializations
+    bootstrap.init_app(app)
     return app
