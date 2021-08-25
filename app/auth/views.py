@@ -1,9 +1,10 @@
 from flask_login import login_manager
 from . import auth
 from flask import render_template,url_for,redirect,flash
-from .forms import RegForm
+from .forms import RegForm,LoginForm
 from ..models import User
 from app import bcrypt,db
+from flask_login import login_user, logout_user,login_required,current_user
 
 
 
@@ -26,5 +27,13 @@ def register():
 
 @auth.route('/login')
 def login():
+  form = LoginForm()
+  if form.validate_on_submit():
+      user = User.query.filter_by(email = form.email.data).first()
+      if user and bcrypt.check_password_hash(user.password, form.password.data):
+           login_user(user,remember = form.remember_me.data)
+           flash("Login Successful",'success')
+           return redirect('main.recipe')
+      flash("Invalid userame or password")
 
-  return render_template('auth/login.html')
+  return render_template('auth/login.html', form = form)
