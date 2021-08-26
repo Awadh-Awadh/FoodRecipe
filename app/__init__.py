@@ -22,4 +22,7 @@ def create_app(config_name):
 
     #extensions instance initializations
     bootstrap.init_app(app)
+    
+    from .requests import configure_request
+    configure_request(app)
     return app
