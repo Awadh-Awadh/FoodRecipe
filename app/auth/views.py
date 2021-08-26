@@ -33,7 +33,7 @@ def login():
       if user and bcrypt.check_password_hash(user.password, form.password.data):
            login_user(user,remember = form.remember_me.data)
            flash("Login Successful",'success')
-           return redirect('main.recipe')
+           return redirect(url_for('main.give_recipe'))
       flash("Invalid userame or password",'danger')
 
   return render_template('login.html', form = form)

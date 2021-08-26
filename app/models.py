@@ -1,3 +1,5 @@
+from .import db,login_manager
+from flask_login import UserMixin
 
 class Recipe:
     def __init__(self,id,image,missedIngredients,unusedIngredients):
@@ -5,12 +7,6 @@ class Recipe:
         self.image = image
         self.missedIngredients = missedIngredients
         self.unusedIngredients = unusedIngredients
-from .import db,login_manager
-from flask_login import UserMixin
-
-
-
-
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
     id = db.Column(db.Integer(), primary_key = True)
