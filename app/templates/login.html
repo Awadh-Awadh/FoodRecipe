@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static',filename = 'css/auth.css')}}">
+{% endblock %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+
+
+
+
+{% block content %}
+<div class="container">
+ 
+  <div>
+    <h1 class = 'text-center'>LOGIN</h1>
+  </div>
+  
+  <div class="form-cont">
+    
+    <div class="form">
+      {% with messages = get_flashed_messages(with_categories = true) %}
+  {% if messages %}
+   {% for category,message in messages %}
+   <div class="alert alert-{{category}} alert-dismissible" role="alert">
+     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+   {{message}}
+     </div>
+   {% endfor %}
+  {% endif %}
+ {% endwith %}
+      {{wtf.quick_form(form)}}
+    </div>
+    
+  </div>
+</div>
+{% endblock %}
