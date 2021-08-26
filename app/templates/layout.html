@@ -25,18 +25,18 @@
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav pull-right">
         {% if current_user.is_authenticated %}
-           
-          <li><a href="{{url_for('auth.login')}}">Recipes</a></li>   
-          <li class=""><a href="{{url_for('auth.login')}}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
-          <li><a href="{{url_for('auth.register')}}">Sign Up</a></li>
-          
+        <li><a href="">Account</a></li> 
+        <li><a href="{{url_for('main.index')}}">Log out</a></li> 
+         
         {% else %}
-          <li><a href="">Account</a></li> 
-          <li><a href="{{url_for('main.index')}}">Log out</a></li> 
+        <li><a href="{{url_for('auth.login')}}">Recipes</a></li>   
+        <li class=""><a href="{{url_for('auth.login')}}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+        <li><a href="{{url_for('auth.register')}}">Sign Up</a></li> 
          
         {% endif %}
           
-          
+        
+        
 
           
          
