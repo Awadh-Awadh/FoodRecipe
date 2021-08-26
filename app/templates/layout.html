@@ -27,9 +27,9 @@
           <li><a href="">Recipe</a></li>
           <li class=""><a href=""><i class="fas fa-sign-in-alt"></i> Login</a></li>
           <li><a href="">Sign Up</a></li>
-          {% if current_user.is_authenticared %}
-          <li><a href="">Sign Up</a></li>
-          <li><a href="">My Recipes</a></li>      
+          {% if current_user.is_authenticated %}
+          <li><a href="">My Recipes</a></li>
+          <li><a href="">Log out</a></li>      
           {% endif %}
 
         </ul>

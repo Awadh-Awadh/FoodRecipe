@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+<link rel="stylesheet" href="{{url_for('static', filename ='css/hero.css')}}">
+{% endblock %}
+
+
+
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <div class="header">
+        <h2>Hello user,</h2>
+        <h1>
+          Make Your meal with a click of a button
+        </h1>
+
+        <h3>
+          With over 30,000 recipes of your choice
+          to suit your drool
+        </h3>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="shape">
+        <div class="recipe">
+          <img src="{{url_for('static',filename = 'hero.jpg')}}" alt="">
+        </div>
+      </div>
+      <!-- <div class="recipe">
+        <img src="{{url_for('static',filename = 'hero.jpg')}}" alt="">
+      </div> -->
+    </div>
+    
+  </div>
+  <div class="start">
+    <a href="{{url_for('auth.register')}}"><button class = 'btn custom'>Get started</button></a>
+  </div>
+</div>
+{% endblock %}

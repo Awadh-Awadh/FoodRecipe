@@ -11,6 +11,7 @@ h1 {
   color: #C95827 !important;
   font-family: 'DM Serif Text', serif !important;
   letter-spacing: .8rem;
+  font-weight: 900 !important;
 }
 
 .form-cont{
@@ -26,4 +27,5 @@ h1 {
   margin: 6rem auto;
   opacity: 0.8;
   padding: 1rem 0;
+  border-radius: 20px;
 }
