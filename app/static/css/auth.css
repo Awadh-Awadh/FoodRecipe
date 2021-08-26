@@ -1,0 +1,31 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap');
+body{
+  background-image: url('./form.jpg') !important;
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-attachment: fixed;
+}
+
+h1 {
+  color: #C95827 !important;
+  font-family: 'DM Serif Text', serif !important;
+  letter-spacing: .8rem;
+  font-weight: 900 !important;
+}
+
+.form-cont{
+  display: flex;
+  justify-content: center;
+  justify-content: center;
+}
+
+.form{
+  width: 70%;
+  height: auto;
+  background-color: #fff;
+  margin: 6rem auto;
+  opacity: 0.8;
+  padding: 1rem 0;
+  border-radius: 20px;
+}
