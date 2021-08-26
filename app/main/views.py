@@ -1,3 +1,4 @@
+
 from flask import render_template,request
 from . import main
 from ..requests import search_recipe
@@ -12,3 +13,15 @@ def give_recipe():
         search_result = search_recipe(form.ingredient1.data, form.ingredient2.data,form.ingredient3.data)
         
     return render_template('search.html', form = form, recipe_result = search_result)
+
+
+
+
+
+
+
+
+@main.route('/')
+def index():
+    return render_template('hero.html')
+
