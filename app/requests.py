@@ -23,8 +23,3 @@ def search_recipe(ingredient1,ingredient2,ingredient3):
     
     return recipe_response
         
-        # with urllib.request.urlopen(search_recipe) as data:
-    #     recipe_data= data.read()
-    #     recipe_response = json.loads(recipe_data)
-        
-        # if recipe_response['missedIngredients']:

@@ -1,6 +1,6 @@
 class Recipe:
-    def __init__(self,id,image,usedIngredients,unusedIngredients):
+    def __init__(self,id,image,missedIngredients,unusedIngredients):
         self.id = id
         self.image = image
-        self.usedIngredients = usedIngredients
+        self.missedIngredients = missedIngredients
         self.unusedIngredients = unusedIngredients
