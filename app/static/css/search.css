@@ -1,0 +1,35 @@
+.card{
+    border: solid black;
+    margin-top: 2%;
+    width: 100%;
+    margin: 1%;
+    padding: 1.5%;
+    border-radius: 10px 10px;
+    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.display{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+#rep{
+   
+    margin-top: 12%;
+    padding: 1%;
+}
+
+#title{
+    color: orangered;
+}
+
+.detail{
+    border: solid rgb(112, 76, 76);
+    width: 50%;
+    padding: 1%;
+    justify-content: space-between;
+}

@@ -9,6 +9,8 @@ class Config:
     
     
     '''
+    RECIPE_URL= 'https://api.spoonacular.com/recipes/findByIngredients?apiKey={}&ingredients={},+{},+{}&number=10'
+    RECIPE_API_KEY= os.environ.get('RECIPE_API_KEY')
     SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://moringa:Access@localhost/recipe"
     SECRET_KEY=os.environ.get('SECRET_KEY')
 

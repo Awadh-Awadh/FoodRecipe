@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block css %}
+
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/search.css')}}">
+{% endblock %}
+
+{% block content %}
+    
+    <div class="container-fluid">
+        <div class="row">
+
+            <div id="rep" class="col-md-3">
+                <h1><strong><span id="title">Food</span>Mood</strong></h1>
+                <h4>Enjoy Best Delicacies From Our Recipes</H4>
+                <p><strong>Make a meal with what you have in your store.</strong></p>
+            </div>
+            <div class="col-md-7">
+                <div class="display">
+                    {% for item in recipe_result %}
+                        <div class="card">
+                            <div class="name">
+                                <h4> <strong>{{item.title}}</strong> </h4> 
+                            </div>
+                            <div class="detail">
+                                {% for i in item.missedIngredients %}
+                                    <img src="{{ i.image }}" alt="">
+                                    {{i.original}}
+                                {% endfor %}
+                            </div>    
+                                
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-md-2">
+                {{ wtf.quick_form(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+<!-- <li>{{item.id}}</li>
+<button>{{ item.missedIngredientCount}}</button> -->
