@@ -25,7 +25,7 @@ def register():
 
 
 
-@auth.route('/login')
+@auth.route('/login', methods=['GET','POST'])
 def login():
   form = LoginForm()
   if form.validate_on_submit():
@@ -34,6 +34,14 @@ def login():
            login_user(user,remember = form.remember_me.data)
            flash("Login Successful",'success')
            return redirect('main.recipe')
-      flash("Invalid userame or password")
+      flash("Invalid userame or password",'danger')
 
-  return render_template('auth/login.html', form = form)
+  return render_template('login.html', form = form)
+
+
+@auth.logout('/logout')
+@login_required
+def logout():
+    logout_user()
+
+    return render_template('hero.html')
